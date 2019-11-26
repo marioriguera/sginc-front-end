@@ -1,0 +1,89 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-1 navbar-light cyan lighten-3" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand"  style="color: azure;" routerLink="#">Administración</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+              <a (click)="activarPanelServiciosEvent()" class="nav-link waves-light" mdbWavesEffect>Gestionar Servicios<!-- <span class="sr-only">(current)</span> --></a>
+          </li>
+          <li class="nav-item">
+              <a (click)="activarPanelEmpresasEvent()" class="nav-link waves-light" mdbWavesEffect>Gestionar Empresas</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Gestionar Usuarios</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Gestionar Contratos</a>
+          </li>
+      </ul>
+      <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-1 navbar-light cyan lighten-3" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand"  style="color: azure;" routerLink="#">Soporte</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+              <a class="nav-link waves-light" mdbWavesEffect>Mi Página<!-- <span class="sr-only">(current)</span> --></a>
+          </li>
+          <li class="nav-item">
+              <!-- (click)="activarMisIncidencias(true)" -->
+              <a (click)="activarPanelIncidenciasEvent()" class="nav-link waves-light" mdbWavesEffect type="button">Mis Incidencias</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Cola de Espera</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Todas las Incidencias</a>
+          </li>
+      </ul>
+      <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-1 navbar-light cyan lighten-3" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand"  style="color: azure;" routerLink="#">Reporte</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+      <!-- Links active-->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+              <a class="nav-link waves-light" mdbWavesEffect>Incidencias por Técnico<!-- <span class="sr-only">(current)</span> --></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Incidencias Cerradas</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Incidencias por Servicio</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Incidencias por Conformidad</a>
+          </li>
+      </ul>
+      <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

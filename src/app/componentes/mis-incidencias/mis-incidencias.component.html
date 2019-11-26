@@ -1,0 +1,299 @@
+
+<br>
+
+<mdb-card>
+    <mdb-card-header>
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <button mdbBtn type="button" color="primary" class=" relative waves-light" (click)="basicModalCrear.show()" mdbWavesEffect>Crear</button>
+          <button mdbBtn type="button" color="primary" class=" relative waves-light" (click)="basicModalAnnadirNotas.show()" mdbWavesEffect>Añadir Notas</button>
+          <button mdbBtn type="button" color="primary" class=" relative waves-light" (click)="basicModalCambiarEstado.show()" mdbWavesEffect>Cambiar Estado</button>
+          <button mdbBtn type="button" color="primary" class=" relative waves-light" (click)="basicModalConformidad.show()" mdbWavesEffect>Conformidad</button>
+      </div>
+    </mdb-card-header>
+    <mdb-card-body>
+      <mdb-card-title>
+        <button mdbBtn color="link" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+            <h5>Panel Principal</h5>
+          </button>
+      </mdb-card-title>
+
+      <div class="container-fluid">
+
+          <div mdbCollapse [isCollapsed]="true" #test="bs-collapse">
+            <table mdbTable>
+              <thead class="black white-text">
+                <tr>
+                  <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr mdbTableCol *ngFor="let el of elements">
+                  <th scope="row">{{el.id}}</th>
+                  <td>{{el.first}}</td>
+                  <td>{{el.last}}</td>
+                  <td>{{el.handle}}</td>
+                </tr>
+              </tbody>
+
+              <nav aria-label="Page navigation example">
+                <ul class="pagination pg-blue">
+                  <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" mdbWavesEffect>1</a></li>
+                  <li class="page-item active">
+                    <span class="page-link" mdbWavesEffect>
+                      2
+                      <span class="sr-only">(current)</span>
+                    </span>
+                  </li>
+                  <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" mdbWavesEffect>Next</a>
+                  </li>
+                </ul>
+              </nav>
+
+            </table>
+          </div>
+
+        </div>
+
+    </mdb-card-body>
+</mdb-card>
+
+
+<div mdbModal #basicModalCrear="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModalCrear.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Crear</h4>
+      </div>
+      <div class="modal-body">
+        <div class="md-form">
+          <input mdbInput type="text" id="tituloModalCrear" class="form-control">
+          <label for="form1" class="">Título</label>
+        </div>
+        <!--Basic textarea-->
+        <div class="md-form">
+          <textarea type="text" id="descripcionModalCrear" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form7">Descripción</label>
+        </div>
+        <select class="browser-default custom-select">
+          <option selected>Seleccionar opción</option>
+          <option *ngFor="let element of optionsSelect">
+            {{element.label}}
+          </option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModalCrear.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div mdbModal #basicModalAnnadirNotas="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModalAnnadirNotas.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Añadir Notas</h4>
+      </div>
+      <div class="modal-body">
+        <!--Basic textarea-->
+        <div class="md-form">
+          <textarea type="text" id="notasModalAnnadirNotas" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form7">Escribir la nueva nota</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModalAnnadirNotas.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div mdbModal #basicModalCambiarEstado="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModalCambiarEstado.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Cambiar Estado</h4>
+      </div>
+      <div class="modal-body">
+        <select class="browser-default custom-select">
+          <option selected>Seleccionar estado</option>
+          <option *ngFor="let element of optionsSelect">
+            {{element.label}}
+          </option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <!--Basic textarea-->
+        <div class="md-form">
+          <textarea type="text" id="cambiarEstadoModal" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form7">Descripción</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModalCambiarEstado.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div mdbModal #basicModalConformidad="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModalConformidad.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Conformidad</h4>
+      </div>
+      <div class="modal-body">
+        <select class="browser-default custom-select">
+          <option selected>Seleccionar conformidad</option>
+          <option *ngFor="let element of optionsSelect">
+            {{element.label}}
+          </option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <!--Basic textarea-->
+        <div class="md-form">
+          <textarea type="text" id="notaModalConformidad" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form7">Nota</label>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModalConformidad.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<mdb-card>
+  <mdb-card-header>
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <button mdbBtn type="button" color="primary" class="waves-light" mdbWavesEffect (click)="pendiente.toggle()">Pendientes</button>
+          <button mdbBtn type="button" color="primary" class="waves-light" mdbWavesEffect (click)="asignada.toggle()">Asignadas</button>
+          <button mdbBtn type="button" color="primary" class="waves-light" mdbWavesEffect (click)="cerrada.toggle()">Cerradas</button>
+      </div>
+  </mdb-card-header>
+  <mdb-card-body>
+
+    <div class="" mdbCollapse #pendiente="bs-collapse">
+
+      <mdb-card-title>
+          <h5>Incidencias Pendientes</h5>
+        </mdb-card-title>
+      <mdb-card-text>Las incidencias que están aun pendientes.</mdb-card-text>
+
+      <table mdbTable responsive="true">
+        <thead>
+          <tr>
+            <th *ngFor="let head of headElementsPendientes" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let el of elementsPendientes">
+            <th scope="row">{{el.id}}</th>
+            <td>{{el.heading1}}</td>
+            <td>{{el.heading2}}</td>
+            <td>{{el.heading3}}</td>
+            <td>{{el.heading4}}</td>
+            <td>{{el.heading5}}</td>
+            <td>{{el.heading6}}</td>
+            <td>{{el.heading7}}</td>
+            <td>{{el.heading8}}</td>
+            <td>{{el.heading9}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="" mdbCollapse #asignada="bs-collapse">
+
+        <mdb-card-title>
+            <h5>Incidencias Asignadas</h5>
+          </mdb-card-title>
+        <mdb-card-text>Las incidencias que están asignadas.</mdb-card-text>
+
+        <table mdbTable responsive="true">
+          <thead>
+            <tr>
+              <th *ngFor="let head of headElementsAsignadas" scope="col">{{head}} </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let el of elementsAsignadas">
+              <th scope="row">{{el.id}}</th>
+              <td>{{el.heading1}}</td>
+              <td>{{el.heading2}}</td>
+              <td>{{el.heading3}}</td>
+              <td>{{el.heading4}}</td>
+              <td>{{el.heading5}}</td>
+              <td>{{el.heading6}}</td>
+              <td>{{el.heading7}}</td>
+              <td>{{el.heading8}}</td>
+              <td>{{el.heading9}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="" mdbCollapse #cerrada="bs-collapse">
+
+          <mdb-card-title>
+              <h5>Incidencias cerradas</h5>
+            </mdb-card-title>
+          <mdb-card-text>Las incidencias que están cerradas.</mdb-card-text>
+
+          <table mdbTable responsive="true">
+            <thead>
+              <tr>
+                <th *ngFor="let head of headElementsCerrada" scope="col">{{head}} </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr mdbTableCol *ngFor="let el of elementsCerrada">
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.heading1}}</td>
+                <td>{{el.heading2}}</td>
+                <td>{{el.heading3}}</td>
+                <td>{{el.heading4}}</td>
+                <td>{{el.heading5}}</td>
+                <td>{{el.heading6}}</td>
+                <td>{{el.heading7}}</td>
+                <td>{{el.heading8}}</td>
+                <td>{{el.heading9}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+  </mdb-card-body>
+</mdb-card>
