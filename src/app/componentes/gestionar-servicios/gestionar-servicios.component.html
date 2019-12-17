@@ -1,3 +1,58 @@
-<p>
-  gestionar-servicios works!
-</p>
+<!-- Editable table -->
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Gestionar Servicios</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+
+      <div class="row">
+        <div class="col-sm">
+          <div class="md-form">
+            <input type="text" [(ngModel)]="searchText" class="form-control" id="search" mdbInput /> <label for="search">Buscar</label>
+          </div>
+        </div>
+        <div class="col-sm">
+          <span class="table-add float-right mb-3 mr-2">
+            <a class="text-success" (click)="add()">
+              <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+
+        <thead class="black white-text">
+          <tr>
+            <th *ngFor="let head of headElements" scope="col" >{{head}}</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
